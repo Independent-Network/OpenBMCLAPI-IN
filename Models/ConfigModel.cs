@@ -2,8 +2,9 @@
 {
     public class ConfigModel
     {
-        public ConfigGeneralModel? General { get; set; }
-        public ConfigWebModel? Web { get; set; }
+        public ConfigGeneralModel? General { get; set; } = new();
+        public ConfigWebModel? Web { get; set; } = new();
+        public ConfigCertModel? Cert { get; set; } = new();
     }
     public class ConfigGeneralModel
     {
@@ -22,12 +23,12 @@
     {
         public int Port { get; set; } = 4001;
         public int PublicPort { get; set; } = 4001;
-        public bool Proxy {  get; set; } = false;
+        public bool Proxy { get; set; } = false;
     }
     public class ConfigCertModel
     {
         public string? SaveDirectory { get; set; } = ".cert";
-        public string? Key {  get; set; }
+        public string? Key { get; set; }
         public string? Cert { get; set; }
     }
 }
