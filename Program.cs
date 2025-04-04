@@ -12,7 +12,7 @@ namespace OpenBMCLAPI_IN
             ConfigInstance = new Config();
             ConfigInstance.LoadConfig().Wait();
             var levelSwitch=new LoggingLevelSwitch();
-            levelSwitch.MinimumLevel = Logging.GetLogLevel(ConfigInstance.Instance.Log.LogLevel);
+            levelSwitch.MinimumLevel = ConfigInstance.Instance.Log.LogLevel;
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.ControlledBy(levelSwitch)
                 .WriteTo.File(
@@ -22,8 +22,8 @@ namespace OpenBMCLAPI_IN
                 rollingInterval: ConfigInstance.Instance.Log.RollingInterval,
                 outputTemplate: ConfigInstance.Instance.Log.OutputFormat,
                 retainedFileCountLimit: ConfigInstance.Instance.Log.MaxFileOfSingleLaunch
-                
                 )
+                .WriteTo.Console()       
                 .CreateLogger();
             Log.Logger.Debug("Successfully got config file:\n{content}",ConfigInstance.GetYamlContent());
             Log.Logger.Information("Successfully got config file");

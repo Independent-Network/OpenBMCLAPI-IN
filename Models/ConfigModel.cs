@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using Serilog.Events;
 
 namespace OpenBMCLAPI_IN.Models
 {
@@ -36,11 +37,7 @@ namespace OpenBMCLAPI_IN.Models
     }
     public class ConfigLogModel
     {
-#if DEBUG
-        public string LogLevel { get; set; } = "verbose";
-#else
-        public string LogLevel { get; set; } = "info";
-#endif
+        public LogEventLevel LogLevel { get; set; } = LogEventLevel.Verbose;
         public string FilePathFormat { get; set; } = "logs/logs_{{yyyy_MM_dd}}";
         public string FileNameFormat { get; set; } = "log_{{yyyyMMdd_HHmmss}}";
         public string OutputFormat { get; set; } = "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff}] [{Level:u3}] | {SourceContext} {Message:lj}{NewLine}{Exception}";

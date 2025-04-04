@@ -6,22 +6,6 @@ namespace OpenBMCLAPI_IN.Utils
 {
     public class Logging
     {
-        public static LogEventLevel GetLogLevel(string logLevel)
-        {
-            switch(logLevel)
-            {
-                case "verbose":
-                    return LogEventLevel.Verbose;
-                case "info":
-                    return LogEventLevel.Information;
-                case "debug":
-                    return LogEventLevel.Debug;
-                case "error":
-                    return LogEventLevel.Error;
-                default:
-                    return LogEventLevel.Error;
-            }
-        }
         /// <summary>
         /// 替换字符串中的 {{...}} 占位符（排除 {{Counter}}），用当前时间格式化。
         /// 例如："log_{{yyyyMMdd}}_{{HHmmss}}_{{Counter}}.log" -> "log_20231010_143000_{{Counter}}.log"
