@@ -1,10 +1,13 @@
-﻿namespace OpenBMCLAPI_IN.Models
+﻿using Serilog;
+
+namespace OpenBMCLAPI_IN.Models
 {
     public class ConfigModel
     {
         public ConfigGeneralModel? General { get; set; } = new();
         public ConfigWebModel? Web { get; set; } = new();
         public ConfigCertModel? Cert { get; set; } = new();
+        public ConfigLogModel? Log { get; set; } = new();
     }
     public class ConfigGeneralModel
     {
@@ -30,5 +33,20 @@
         public string? SaveDirectory { get; set; } = ".cert";
         public string? Key { get; set; }
         public string? Cert { get; set; }
+    }
+    public class ConfigLogModel
+    {
+#if DEBUG
+        public string LogLevel { get; set; } = "verbose";
+#else
+        public string LogLevel { get; set; } = "info";
+#endif
+        public string FilePathFormat { get; set; } = "logs/logs_{{yyyy_MM_dd}}";
+        public string FileNameFormat { get; set; } = "log_{{yyyyMMdd_HHmmss}}";
+        public string OutputFormat { get; set; } = "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff}] [{Level:u3}] | {SourceContext} {Message:lj}{NewLine}{Exception}";
+        public bool RollOnFileSizeLimit { get; set; } = true;
+        public int MaxSizeOfSingleFile { get; set; } = 1024 * 1024 * 128; //128MiB
+        public RollingInterval RollingInterval { get; set; } = RollingInterval.Infinite;
+        public int MaxFileOfSingleLaunch { get; set; } = 10;
     }
 }

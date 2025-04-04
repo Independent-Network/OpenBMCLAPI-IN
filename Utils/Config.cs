@@ -17,8 +17,15 @@ namespace OpenBMCLAPI_IN.Utils
         public async Task LoadConfig()
         {
             Instance = new();
-            //读取文件
             string configFile = GetAbsolutePathForConfigFile();
+#if DEBUG
+            if (File.Exists(ConfigFile))
+            {
+                File.Delete(ConfigFile);
+            }
+#endif
+            //读取文件
+
 
             if (!File.Exists(configFile))
             {
@@ -28,7 +35,7 @@ namespace OpenBMCLAPI_IN.Utils
             }
             if (string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(configFile)))
             {
-                                //初始化写入
+                //初始化写入
                 var yamlinit = serializer.Serialize(Instance);
                 await File.WriteAllTextAsync(configFile, yamlinit, System.Text.Encoding.UTF8);
             }
@@ -44,5 +51,10 @@ namespace OpenBMCLAPI_IN.Utils
         {
             return(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigFile));
         }
+        public string GetYamlContent()
+        {
+            return serializer.Serialize(Instance);
+        }
     }
+
 }
