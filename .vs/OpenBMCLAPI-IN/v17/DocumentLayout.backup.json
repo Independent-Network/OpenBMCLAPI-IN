@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\OpenBMCLAPI-IN\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\loggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\loggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\openbmclapi-in.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:openbmclapi-in.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,43 +34,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 251,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OpenBMCLAPI-IN.csproj",
-              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeDocumentMoniker": "OpenBMCLAPI-IN.csproj",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeToolTip": "OpenBMCLAPI-IN.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-31T14:36:44.044Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\OpenBMCLAPI-IN\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBcAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAiwCMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:36:21.958Z",
+              "WhenOpened": "2025-04-04T22:37:22.018Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 149,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoggerExtensions.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\LoggerExtensions.cs",
+              "RelativeDocumentMoniker": "Utils\\Localization\\LoggerExtensions.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\LoggerExtensions.cs*",
+              "RelativeToolTip": "Utils\\Localization\\LoggerExtensions.cs*",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvyIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T22:23:22.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CultureManager.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\CultureManager.cs",
+              "RelativeDocumentMoniker": "Utils\\Localization\\CultureManager.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\CultureManager.cs",
+              "RelativeToolTip": "Utils\\Localization\\CultureManager.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA0wCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T14:29:21.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ResxCache.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\ResxCache.cs",
+              "RelativeDocumentMoniker": "Utils\\Localization\\ResxCache.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\ResxCache.cs",
+              "RelativeToolTip": "Utils\\Localization\\ResxCache.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAcwFcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T14:27:47.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConfigModel.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Models\\ConfigModel.cs",
+              "RelativeDocumentMoniker": "Models\\ConfigModel.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Models\\ConfigModel.cs",
+              "RelativeToolTip": "Models\\ConfigModel.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAswCsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T11:03:55.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Logging.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Logging.cs",
+              "RelativeDocumentMoniker": "Utils\\Logging.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Logging.cs",
+              "RelativeToolTip": "Utils\\Logging.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T11:03:20.046Z",
+              "EditorCaption": ""
             }
           ]
         }

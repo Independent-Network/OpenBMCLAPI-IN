@@ -18,4 +18,27 @@
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="E:\OpenBMCLAPI-IN\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="E:\OpenBMCLAPI-IN\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\LogResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LogResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\LogResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

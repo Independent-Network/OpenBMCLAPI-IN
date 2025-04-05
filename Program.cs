@@ -1,4 +1,5 @@
-using OpenBMCLAPI_IN.Utils;
+﻿using OpenBMCLAPI_IN.Utils;
+using OpenBMCLAPI_IN.Utils.Localization;
 using Serilog;
 using Serilog.Core;
 namespace OpenBMCLAPI_IN
@@ -9,8 +10,12 @@ namespace OpenBMCLAPI_IN
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //读取配置
             ConfigInstance = new Config();
             ConfigInstance.LoadConfig().Wait();
+            //初始本地化
+            CultureManager.Current = new System.Globalization.CultureInfo(ConfigInstance.Instance.General.Locale);
+            //配置日志
             var levelSwitch=new LoggingLevelSwitch();
             levelSwitch.MinimumLevel = ConfigInstance.Instance.Log.LogLevel;
             Log.Logger = new LoggerConfiguration()
@@ -25,16 +30,16 @@ namespace OpenBMCLAPI_IN
                 )
                 .WriteTo.Console()       
                 .CreateLogger();
-            Log.Logger.Debug("Successfully got config file:\n{content}",ConfigInstance.GetYamlContent());
-            Log.Logger.Information("Successfully got config file");
-            Log.Logger.Debug("Logger initialized with properties:\npath: {path},\nrollOnFileSizeLimit: {sizeLimitRolling},\nfileSizeLimit: {sizeLimit} bytes,\nrollingInterval: {interval},\noutputTemplate: {optTemplate},\nretainedFileCountLimit: {maxFile}", 
+            Log.Logger.DebugL("got_config_file",ConfigInstance.GetYamlContent());
+            Log.Logger.InformationL("got_config_file");
+            Log.Logger.DebugL("logger_initialized", 
                                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Logging.FormatDateTimePlaceholders(ConfigInstance.Instance.Log.FilePathFormat), Logging.FormatDateTimePlaceholders(ConfigInstance.Instance.Log.FileNameFormat) + ".log"),
                                 ConfigInstance.Instance.Log.RollOnFileSizeLimit,
                                 ConfigInstance.Instance.Log.MaxSizeOfSingleFile,
                                 ConfigInstance.Instance.Log.RollingInterval,
                                 ConfigInstance.Instance.Log.OutputFormat,
                                 ConfigInstance.Instance.Log.MaxFileOfSingleLaunch);
-            Log.Logger.Information("Logger initialization finished");
+            Log.Logger.InformationL("logger_initialized");
             var app = builder.Build();
             app.MapGet("/", () => "Hello World!");
             app.Run();
