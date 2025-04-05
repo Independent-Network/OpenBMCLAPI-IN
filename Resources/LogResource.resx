@@ -121,7 +121,7 @@
     <value>Successfully got config file:\n{0}</value>
   </data>
   <data name="debug.logger_initialized" xml:space="preserve">
-    <value>Logger initialized with properties:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}"</value>
+    <value>Logger initialized with properties:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}</value>
   </data>
   <data name="info.got_config_file" xml:space="preserve">
     <value>Successfully got config file</value>

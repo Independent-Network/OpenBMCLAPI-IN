@@ -1,7 +1,8 @@
 ﻿using OpenBMCLAPI_IN.Utils;
-using OpenBMCLAPI_IN.Utils.Localization;
+using Serilog.Localization;
 using Serilog;
 using Serilog.Core;
+using OpenBMCLAPI_IN.Resources;
 namespace OpenBMCLAPI_IN
 {
     public class Program
@@ -10,11 +11,12 @@ namespace OpenBMCLAPI_IN
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //配置控制台
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            
             //读取配置
             ConfigInstance = new Config();
             ConfigInstance.LoadConfig().Wait();
-            //初始本地化
-            CultureManager.Current = new System.Globalization.CultureInfo(ConfigInstance.Instance.General.Locale);
             //配置日志
             var levelSwitch=new LoggingLevelSwitch();
             levelSwitch.MinimumLevel = ConfigInstance.Instance.Log.LogLevel;
@@ -28,6 +30,7 @@ namespace OpenBMCLAPI_IN
                 outputTemplate: ConfigInstance.Instance.Log.OutputFormat,
                 retainedFileCountLimit: ConfigInstance.Instance.Log.MaxFileOfSingleLaunch
                 )
+                .WithLocalization(typeof(LogResource), ConfigInstance.Instance.General.Locale)
                 .WriteTo.Console()       
                 .CreateLogger();
             Log.Logger.DebugL("got_config_file",ConfigInstance.GetYamlContent());

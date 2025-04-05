@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "E:\\OpenBMCLAPI-IN\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\loggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\loggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\resxcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\localization\\culturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 251,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,46 +42,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAiwCMAAAAlAAAAAAAAAA==",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAABQAAAAAAAAAAAAtwB8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T22:37:22.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LoggerExtensions.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\LoggerExtensions.cs",
               "RelativeDocumentMoniker": "Utils\\Localization\\LoggerExtensions.cs",
               "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\LoggerExtensions.cs*",
               "RelativeToolTip": "Utils\\Localization\\LoggerExtensions.cs*",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvyIAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T22:23:22.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "CultureManager.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\CultureManager.cs",
               "RelativeDocumentMoniker": "Utils\\Localization\\CultureManager.cs",
               "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\CultureManager.cs",
               "RelativeToolTip": "Utils\\Localization\\CultureManager.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA0wCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwCAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T14:29:21.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ResxCache.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Localization\\ResxCache.cs",
               "RelativeDocumentMoniker": "Utils\\Localization\\ResxCache.cs",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ConfigModel.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Models\\ConfigModel.cs",
               "RelativeDocumentMoniker": "Models\\ConfigModel.cs",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Logging.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Logging.cs",
               "RelativeDocumentMoniker": "Utils\\Logging.cs",

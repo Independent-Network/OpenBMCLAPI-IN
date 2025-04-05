@@ -70,7 +70,7 @@ namespace OpenBMCLAPI_IN.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logger initialized with properties:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}&quot;.
+        ///   Looks up a localized string similar to Logger initialized with properties:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}.
         /// </summary>
         public static string debug_logger_initialized {
             get {
