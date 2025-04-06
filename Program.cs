@@ -2,15 +2,16 @@
 using Serilog.Localization;
 using Serilog;
 using Serilog.Core;
+using Serilog.Extensions.Hosting;
 using OpenBMCLAPI_IN.Resources;
+using Serilog.Sinks.SystemConsole.Themes;
 namespace OpenBMCLAPI_IN
 {
     public class Program
     {
         public static Config ConfigInstance { get; set; }
         public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        {            
             //配置控制台
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             
@@ -31,8 +32,12 @@ namespace OpenBMCLAPI_IN
                 retainedFileCountLimit: ConfigInstance.Instance.Log.MaxFileOfSingleLaunch
                 )
                 .WithLocalization(typeof(LogResource), ConfigInstance.Instance.General.Locale)
-                .WriteTo.Console()       
+                .WriteTo.Console(
+                    theme: new AnsiConsoleTheme(ConfigInstance.Instance.Log.ConsoleTheme),
+                    outputTemplate: ConfigInstance.Instance.Log.OutputFormat
+                )       
                 .CreateLogger();
+            
             Log.Logger.DebugL("got_config_file",ConfigInstance.GetYamlContent());
             Log.Logger.InformationL("got_config_file");
             Log.Logger.DebugL("logger_initialized", 
@@ -43,7 +48,10 @@ namespace OpenBMCLAPI_IN
                                 ConfigInstance.Instance.Log.OutputFormat,
                                 ConfigInstance.Instance.Log.MaxFileOfSingleLaunch);
             Log.Logger.InformationL("logger_initialized");
+            var builder = WebApplication.CreateBuilder(args);
+            builder.Host.UseSerilog(Log.Logger);
             var app = builder.Build();
+            
             app.MapGet("/", () => "Hello World!");
             app.Run();
         }

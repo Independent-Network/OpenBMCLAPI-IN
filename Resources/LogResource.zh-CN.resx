@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="debug.got_config_file" xml:space="preserve">
-    <value>成功获取配置文件，内容为:\n{0}</value>
+    <value>成功获取配置文件，内容为:\n\n{0}\n</value>
   </data>
   <data name="debug.logger_initialized" xml:space="preserve">
-    <value>日志器成功初始化，设置属性为:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}</value>
+    <value>日志器成功初始化，设置属性为:\n\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}\n</value>
   </data>
   <data name="info.got_config_file" xml:space="preserve">
     <value>成功获取配置文件</value>

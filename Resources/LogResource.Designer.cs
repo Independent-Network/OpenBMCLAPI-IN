@@ -61,7 +61,7 @@ namespace OpenBMCLAPI_IN.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully got config file:\n{0}.
+        ///   Looks up a localized string similar to Successfully got config file:\n\n{0}\n.
         /// </summary>
         public static string debug_got_config_file {
             get {
@@ -70,7 +70,7 @@ namespace OpenBMCLAPI_IN.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logger initialized with properties:\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}.
+        ///   Looks up a localized string similar to Logger initialized with properties:\n\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}\n.
         /// </summary>
         public static string debug_logger_initialized {
             get {
