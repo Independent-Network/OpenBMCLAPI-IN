@@ -1,0 +1,136 @@
+name: Build and Package (All Platforms)
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  CONFIGURATION: "Release"
+  DOCKER_REGISTRY: "ghcr.io"
+  PROJECT_NAME: "OpenBMCLAPI-IN"
+
+jobs:
+  build-and-package:
+    name: Build for ${{ matrix.os }} (${{ matrix.arch }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Linux 平台
+          - os: ubuntu-latest
+            arch: x64
+            rid: linux-x64
+          - os: ubuntu-latest
+            arch: arm
+            rid: linux-arm
+          - os: ubuntu-latest
+            arch: arm64
+            rid: linux-arm64
+          # Windows 平台
+          - os: windows-latest
+            arch: x64
+            rid: win-x64
+          - os: windows-latest
+            arch: x86
+            rid: win-x86
+          - os: windows-latest
+            arch: arm64
+            rid: win-arm64
+          # macOS 平台
+          - os: macos-latest
+            arch: x64
+            rid: osx-x64
+          - os: macos-latest
+            arch: arm64
+            rid: osx-arm64
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get Commit SHA
+        id: commit
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Publish Application (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          dotnet publish \
+            --configuration ${{ env.CONFIGURATION }} \
+            --runtime ${{ matrix.rid }} \
+            --self-contained true \
+            --output ./publish/${{ matrix.rid }} \
+            -p:PublishSingleFile=true \
+            -p:PublishTrimmed=true
+
+      - name: Publish Application (Windows)
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          dotnet publish ^
+            --configuration ${{ env.CONFIGURATION }} ^
+            --runtime ${{ matrix.rid }} ^
+            --self-contained true ^
+            --output ./publish/${{ matrix.rid }} ^
+            -p:PublishSingleFile=true ^
+            -p:PublishTrimmed=true
+
+      - name: Package Artifacts (Linux/macOS)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          mkdir -p ./artifacts
+          FILENAME_PREFIX="${{ env.PROJECT_NAME }}_${{ steps.commit.outputs.sha_short }}_${{ matrix.rid }}"
+          tar -czvf "./artifacts/${FILENAME_PREFIX}.tar.gz" -C "./publish/${{ matrix.rid }}" .
+
+          if [[ "${{ matrix.rid }}" == "linux-x64" ]]; then
+            sudo apt-get update
+            sudo apt-get install -y rpm ruby ruby-dev rubygems build-essential
+            sudo gem install --no-document fpm
+            
+            fpm -s dir -t deb -n ${{ env.PROJECT_NAME }} \
+              -v ${{ github.run_number }} \
+              --architecture amd64 \
+              --prefix /usr/local/${{ env.PROJECT_NAME }} \
+              -C "./publish/${{ matrix.rid }}" \
+              -p "./artifacts/${FILENAME_PREFIX}.deb"
+            
+            fpm -s dir -t rpm -n ${{ env.PROJECT_NAME }} \
+              -v ${{ github.run_number }} \
+              --architecture x86_64 \
+              --prefix /usr/local/${{ env.PROJECT_NAME }} \
+              -C "./publish/${{ matrix.rid }}" \
+              -p "./artifacts/${FILENAME_PREFIX}.rpm"
+          fi
+
+      - name: Package Artifacts (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $commitShort = "${{ steps.commit.outputs.sha_short }}"
+          $rid = "${{ matrix.rid }}"
+          $projectName = "${{ env.PROJECT_NAME }}"
+
+          New-Item -ItemType Directory -Path ./artifacts -Force
+          $zipName = "$projectName`_$commitShort`_$rid.zip"
+
+          Compress-Archive -Path "./publish/$rid/*" -DestinationPath "./artifacts/$zipName" -Force
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PROJECT_NAME }}_${{ steps.commit.outputs.sha_short }}_${{ matrix.rid }}_packages
+          path: ./artifacts/${{ env.PROJECT_NAME }}_${{ steps.commit.outputs.sha_short }}_${{ matrix.rid }}.*
+          retention-days: 7
