@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "E:\\OpenBMCLAPI-IN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\core\\storage\\webdavstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:core\\storage\\webdavstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\core\\storage\\istorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:core\\storage\\istorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\resources\\logresource.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:resources\\logresource.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\OpenBMCLAPI-IN\\Core\\Storage\\MeasureFileProducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Core\\Storage\\MeasureFileProducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\core\\storage\\miniostorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:core\\storage\\miniostorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\core\\storage\\bmclapifileinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:core\\storage\\bmclapifileinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\openbmclapi-in.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:openbmclapi-in.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\openbmclapi-in.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:openbmclapi-in.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|e:\\openbmclapi-in\\utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{310098F4-9550-4BF2-AEB2-EECF5FD0EFD2}|OpenBMCLAPI-IN.csproj|solutionrelative:utils\\logging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\OpenBMCLAPI-IN\\Utils\\PipelineExecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Utils\\PipelineExecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,95 +49,156 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 344,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 274,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OpenBMCLAPI-IN",
-              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeDocumentMoniker": "OpenBMCLAPI-IN.csproj",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeToolTip": "OpenBMCLAPI-IN.csproj",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-05T22:47:56.117Z",
+              "DocumentIndex": 5,
+              "Title": "MeasureFileProducer.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\MeasureFileProducer.cs",
+              "RelativeDocumentMoniker": "Core\\Storage\\MeasureFileProducer.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\MeasureFileProducer.cs",
+              "RelativeToolTip": "Core\\Storage\\MeasureFileProducer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T12:36:34.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebDavStorage.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\WebDavStorage.cs",
+              "RelativeDocumentMoniker": "Core\\Storage\\WebDavStorage.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\WebDavStorage.cs*",
+              "RelativeToolTip": "Core\\Storage\\WebDavStorage.cs*",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwE4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:27:50.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T22:57:56.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OpenBMCLAPI-IN",
-              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeDocumentMoniker": "OpenBMCLAPI-IN.csproj",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
-              "RelativeToolTip": "OpenBMCLAPI-IN.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-05T22:48:07.037Z",
-              "EditorCaption": ""
+              "DocumentIndex": 7,
+              "Title": "BmclApiFileInfo.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\BmclApiFileInfo.cs",
+              "RelativeDocumentMoniker": "Core\\Storage\\BmclApiFileInfo.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\BmclApiFileInfo.cs",
+              "RelativeToolTip": "Core\\Storage\\BmclApiFileInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T11:56:48.464Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IStorage.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\IStorage.cs",
+              "RelativeDocumentMoniker": "Core\\Storage\\IStorage.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\IStorage.cs",
+              "RelativeToolTip": "Core\\Storage\\IStorage.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwDEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T08:11:51.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OpenBMCLAPI-IN.csproj",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
+              "RelativeDocumentMoniker": "OpenBMCLAPI-IN.csproj",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\OpenBMCLAPI-IN.csproj",
+              "RelativeToolTip": "OpenBMCLAPI-IN.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-05T22:47:56.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LogResource.Designer.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Resources\\LogResource.Designer.cs",
+              "RelativeDocumentMoniker": "Resources\\LogResource.Designer.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Resources\\LogResource.Designer.cs",
+              "RelativeToolTip": "Resources\\LogResource.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T02:22:33.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\OpenBMCLAPI-IN\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAMwBsAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwD0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T22:37:22.018Z",
+              "WhenOpened": "2025-04-13T03:12:27.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ConfigModel.cs",
               "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Models\\ConfigModel.cs",
               "RelativeDocumentMoniker": "Models\\ConfigModel.cs",
               "ToolTip": "E:\\OpenBMCLAPI-IN\\Models\\ConfigModel.cs",
               "RelativeToolTip": "Models\\ConfigModel.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAowGMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBsAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T11:03:55.062Z",
+              "WhenOpened": "2025-04-06T12:30:52.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Logging.cs",
-              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\Logging.cs",
-              "RelativeDocumentMoniker": "Utils\\Logging.cs",
-              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\Logging.cs",
-              "RelativeToolTip": "Utils\\Logging.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAcAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "PipelineExecutor.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Utils\\PipelineExecutor.cs",
+              "RelativeDocumentMoniker": "Utils\\PipelineExecutor.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Utils\\PipelineExecutor.cs",
+              "RelativeToolTip": "Utils\\PipelineExecutor.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAA/wDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T11:03:20.046Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 56,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "WhenOpened": "2025-04-15T12:34:57.285Z"
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MinioStorage.cs",
+              "DocumentMoniker": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\MinioStorage.cs",
+              "RelativeDocumentMoniker": "Core\\Storage\\MinioStorage.cs",
+              "ToolTip": "E:\\OpenBMCLAPI-IN\\Core\\Storage\\MinioStorage.cs",
+              "RelativeToolTip": "Core\\Storage\\MinioStorage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:27:24.992Z"
             }
           ]
         }

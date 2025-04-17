@@ -123,10 +123,37 @@
   <data name="debug.logger_initialized" xml:space="preserve">
     <value>日志器成功初始化，设置属性为:\n\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}\n</value>
   </data>
+  <data name="error.failed_to_reach_measure" xml:space="preserve">
+    <value>获取测速文件({0})失败。 状态码：{1}，返回信息：\n{2}</value>
+  </data>
+  <data name="error.failed_to_upload_file" xml:space="preserve">
+    <value>上传文件到您的存储失败，有关更多信息，请参阅下面的日志。文件路径：{0}</value>
+  </data>
+  <data name="error.failed_to_verify_measure" xml:space="preserve">
+    <value>无法验证测试文件，因为过程中发生了一些致命错误。有关更多信息，请参阅以下的日志</value>
+  </data>
+  <data name="info.created_measure" xml:space="preserve">
+    <value>测试文件成功创建</value>
+  </data>
   <data name="info.got_config_file" xml:space="preserve">
     <value>成功获取配置文件</value>
   </data>
   <data name="info.logger_initialized" xml:space="preserve">
     <value>日志初始化完毕</value>
+  </data>
+  <data name="info.lost_measure" xml:space="preserve">
+    <value>丢失测试文件，大小: {0}</value>
+  </data>
+  <data name="info.measure_verification_passed" xml:space="preserve">
+    <value>测速文件{0}的验证已通过</value>
+  </data>
+  <data name="info.upload_success" xml:space="preserve">
+    <value>成功上传文件：{0}</value>
+  </data>
+  <data name="warning.measure_not_found" xml:space="preserve">
+    <value>找不到测速文件：{0}，准备创建</value>
+  </data>
+  <data name="warning.measure_size_not_match" xml:space="preserve">
+    <value>测速文件 {0} 大小不匹配(当前:{1}, 预计:{2})，准备重新创建</value>
   </data>
 </root>

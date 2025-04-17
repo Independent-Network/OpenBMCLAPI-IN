@@ -79,6 +79,42 @@ namespace OpenBMCLAPI_IN.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to reach measure file {0}. Get status code {1} with information: \n{2}.
+        /// </summary>
+        public static string error_failed_to_reach_measure {
+            get {
+                return ResourceManager.GetString("error.failed_to_reach_measure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to upload file to your storage, for more information, please see the log below. File path: {0}.
+        /// </summary>
+        public static string error_failed_to_upload_file {
+            get {
+                return ResourceManager.GetString("error.failed_to_upload_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to verify the measure file because some fatal error occured in the process. See logs below for more information.
+        /// </summary>
+        public static string error_failed_to_verify_measure {
+            get {
+                return ResourceManager.GetString("error.failed_to_verify_measure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Measure files have been created successfully.
+        /// </summary>
+        public static string info_created_measure {
+            get {
+                return ResourceManager.GetString("info.created_measure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully got config file.
         /// </summary>
         public static string info_got_config_file {
@@ -93,6 +129,51 @@ namespace OpenBMCLAPI_IN.Resources {
         public static string info_logger_initialized {
             get {
                 return ResourceManager.GetString("info.logger_initialized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost measure file, size: {0}.
+        /// </summary>
+        public static string info_lost_measure {
+            get {
+                return ResourceManager.GetString("info.lost_measure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification for measure file {0} passed.
+        /// </summary>
+        public static string info_measure_verification_passed {
+            get {
+                return ResourceManager.GetString("info.measure_verification_passed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully uploaded file : {0}.
+        /// </summary>
+        public static string info_upload_success {
+            get {
+                return ResourceManager.GetString("info.upload_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find measure file: {0}, ready to create it.
+        /// </summary>
+        public static string warning_measure_not_found {
+            get {
+                return ResourceManager.GetString("warning.measure_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The size of measure file {0} mismatched(Current: {1}, Expected: {2}). Ready to recreate it.
+        /// </summary>
+        public static string warning_measure_size_not_match {
+            get {
+                return ResourceManager.GetString("warning.measure_size_not_match", resourceCulture);
             }
         }
     }

@@ -5,6 +5,9 @@ using Serilog.Core;
 using Serilog.Extensions.Hosting;
 using OpenBMCLAPI_IN.Resources;
 using Serilog.Sinks.SystemConsole.Themes;
+using OpenBMCLAPI_IN.Core.Storage;
+using System.Net;
+using WebDav;
 namespace OpenBMCLAPI_IN
 {
     public class Program
@@ -53,6 +56,11 @@ namespace OpenBMCLAPI_IN
             var app = builder.Build();
             
             app.MapGet("/", () => "Hello World!");
+            app.MapGet("/check_measure", () =>
+            {
+                IStorage webdav = new WebDavStorage("test", "test", "https://server.ind-network.top:5244/");
+                _ = webdav.CheckMeasures();
+            });
             app.Run();
         }
     }

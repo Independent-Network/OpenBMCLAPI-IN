@@ -123,10 +123,37 @@
   <data name="debug.logger_initialized" xml:space="preserve">
     <value>Logger initialized with properties:\n\npath: {0},\nrollOnFileSizeLimit: {1},\nfileSizeLimit: {2} bytes,\nrollingInterval: {3},\noutputTemplate: {4},\nretainedFileCountLimit: {5}\n</value>
   </data>
+  <data name="error.failed_to_reach_measure" xml:space="preserve">
+    <value>Failed to reach measure file {0}. Get status code {1} with information: \n{2}</value>
+  </data>
+  <data name="error.failed_to_upload_file" xml:space="preserve">
+    <value>Failed to upload file to your storage, for more information, please see the log below. File path: {0}</value>
+  </data>
+  <data name="error.failed_to_verify_measure" xml:space="preserve">
+    <value>Failed to verify the measure file because some fatal error occured in the process. See logs below for more information</value>
+  </data>
+  <data name="info.created_measure" xml:space="preserve">
+    <value>Measure files have been created successfully</value>
+  </data>
   <data name="info.got_config_file" xml:space="preserve">
     <value>Successfully got config file</value>
   </data>
   <data name="info.logger_initialized" xml:space="preserve">
     <value>Logger initialization finished</value>
+  </data>
+  <data name="info.lost_measure" xml:space="preserve">
+    <value>Lost measure file, size: {0}</value>
+  </data>
+  <data name="info.measure_verification_passed" xml:space="preserve">
+    <value>Verification for measure file {0} passed</value>
+  </data>
+  <data name="info.upload_success" xml:space="preserve">
+    <value>Successfully uploaded file : {0}</value>
+  </data>
+  <data name="warning.measure_not_found" xml:space="preserve">
+    <value>Cannot find measure file: {0}, ready to create it</value>
+  </data>
+  <data name="warning.measure_size_not_match" xml:space="preserve">
+    <value>The size of measure file {0} mismatched(Current: {1}, Expected: {2}). Ready to recreate it</value>
   </data>
 </root>

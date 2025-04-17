@@ -24,6 +24,8 @@ namespace OpenBMCLAPI_IN.Models
         public int ClusterUpFailedTimes { get; set; } = 90;
         public TimeSpan ClusterUpFailedInterval { get; set; } = new TimeSpan(24, 0, 0);
         public bool ConcurrencyEnableCluster { get; set; } = false;
+        public bool ContinuouslyInspectMeasure { get; set; } = false;
+        public TimeSpan InspectMeasureInterval { get; set; } = new TimeSpan(0, 5, 0);
     }
     public class ConfigWebModel
     {
