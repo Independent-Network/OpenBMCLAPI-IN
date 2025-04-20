@@ -1,82 +1,117 @@
-﻿using Serilog;
-using Serilog.Localization;
-using System.Net;
-using System.Threading.Channels;
+using System.Buffers;
+using System.IO;
+using System.IO.Hashing;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 using WebDav;
 
-namespace OpenBMCLAPI_IN.Core.Storage
+namespace OpenBMCLAPI_IN.Core.Storage;
+
+public class WebDavStorage : IStorage
 {
-    public class WebDavStorage : IStorage
+    private readonly WebDavClient _client;
+    private const int MaxRetries = 3;
+    private const int TimeoutSeconds = 30;
+
+    private readonly string _pathPrefix;
+
+    public WebDavStorage(string baseUrl, string path, string username, string password)
     {
-        private readonly IWebDavClient _client;
-        private readonly string _baseUri;
-        private readonly int _bufferSize;
-        private readonly string _userName;
-        private readonly string _password;
-
-        public WebDavStorage(
-            string userName,
-            string password,
-            string baseUri = "",
-            int bufferSize = 81920 /* 80KB */
-)
+        _client = new WebDavClient(new WebDavClientParams
         {
-            var clientParams = new WebDavClientParams
-            {
-                BaseAddress = new Uri(baseUri),
-                Credentials = new NetworkCredential(userName, password)
-            };
-            _client = new WebDavClient(clientParams);
-            _baseUri = baseUri.TrimEnd('/');
-            _bufferSize = bufferSize;
-            _userName = userName;
-            _password = password;
-        }
-        public async Task<bool> CheckMeasure(int size)
+            BaseAddress = new Uri(baseUrl),
+            Credentials = new System.Net.NetworkCredential(username, password),
+            Timeout = Timeout.InfiniteTimeSpan
+        });
+        _pathPrefix = path.TrimEnd('/') + '/';
+    }
+
+    private string GetFullPath(string path)
+    {
+        return _pathPrefix + path.TrimStart('/');
+    }
+
+    public async Task UploadAsync(string path, Stream content)
+    {
+        int retryCount = 0;
+        while (true)
         {
-            string file = "/dav/measures/" + size;
+            try
+            {
+                using var stream = new MemoryStream();
+                if (content.CanSeek)
+                    content.Position = 0;
+                await content.CopyToAsync(stream);
+                stream.Position = 0;
 
-            var propfindParams = new PropfindParameters
-            {
-                RequestType = PropfindRequestType.AllProperties
-            };
-            var folderResponse = await _client.Propfind("measures", propfindParams);
-            if (!folderResponse.IsSuccessful)
-            {
-                await _client.Mkcol("measures");
+                var response = await _client.PutFile(GetFullPath(path), stream);
+                if (!response.IsSuccessful)
+                    throw new IOException("Upload failed with status: " + response.StatusCode);
+                break;
             }
-            var response = await _client.Propfind(file, propfindParams);
-
-            if (response.IsSuccessful && response.Resources.Any() && response.Resources.First().ContentLength == size * 1024 * 1024)
+            catch (Exception ex) when (retryCount < MaxRetries)
             {
-                Log.Logger.InformationL("measure_verification_passed", file);
-                return true;
+                retryCount++;
+                await Task.Delay(1000 * retryCount);
+                content.Position = 0;
             }
-            else if (response.IsSuccessful && response.Resources.Any())
+            catch (Exception ex)
             {
-                Log.Logger.WarningL("measure_size_not_match", file, response.Resources.First().ContentLength, size * 1024 * 1024);
-                await _client.Delete(file);
-                return false;
-            }
-            else if (response.StatusCode == 404 || !response.Resources.Any())
-            {
-                //文件不存在，需要创建
-                Log.Logger.WarningL("measure_not_found", file);
-                return false;
-            }
-            else
-            {
-                Log.Logger.ErrorL("failed_to_reach_measure", file, response.StatusCode, response.ToString());
-                throw new WebException("File cannot be reached");
+                throw new IOException($"Upload failed after {retryCount} retries: {ex.Message}", ex);
             }
         }
-        public async Task UploadAsync(
-            Stream stream,
-            string destinationUri,
-        CancellationToken cancellationToken = default)
+    }
+
+    public async Task<bool> ExistsAsync(string path)
+    {
+        var response = await _client.Propfind(GetFullPath(path));
+        return response.IsSuccessful && response.Resources.First().ContentLength != null;
+    }
+
+    public async Task<long> GetSizeAsync(string path)
+    {
+        var response = await _client.Propfind(GetFullPath(path));
+        return response.Resources.First().ContentLength ?? 0;
+    }
+
+    public async Task<string> GetSha1Async(string path)
+    {
+        // TODO: 实现SHA1校验逻辑
+        using var stream = await _client.GetRawFile(GetFullPath(path));
+        return await CalculateSha1Async(stream.Stream);
+    }
+
+    public async Task<SizeVerificationResult> VerifySizeAsync(string path, long expectedSize)
+    {
+        if (!await ExistsAsync(path))
+            return SizeVerificationResult.NotFound;
+
+        var actualSize = await GetSizeAsync(path);
+        return actualSize == expectedSize
+            ? SizeVerificationResult.Match
+            : SizeVerificationResult.SizeMismatch;
+    }
+
+    private static async Task<string> CalculateSha1Async(Stream stream)
+    {
+        if (stream.CanSeek)
+            stream.Position = 0;
+
+        using var sha1 = SHA1.Create();
+        var buffer = ArrayPool<byte>.Shared.Rent(81920);
+        try
         {
-            await _client.PutFile(destinationUri, stream);
-            Log.Logger.InformationL("upload_success",destinationUri);
+            int bytesRead;
+            while ((bytesRead = await stream.ReadAsync(buffer)) > 0)
+            {
+                sha1.TransformBlock(buffer, 0, bytesRead, null, 0);
+            }
+            sha1.TransformFinalBlock(buffer, 0, 0);
+            return BitConverter.ToString(sha1.Hash).Replace("-", "").ToLowerInvariant();
+        }
+        finally
+        {
+            ArrayPool<byte>.Shared.Return(buffer);
         }
     }
 }
