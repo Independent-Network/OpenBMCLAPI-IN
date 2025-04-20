@@ -25,7 +25,7 @@ public class WebDavStorage : IStorage
             Credentials = new System.Net.NetworkCredential(username, password),
             Timeout = Timeout.InfiniteTimeSpan
         });
-        _pathPrefix = path.TrimEnd('/') + '/';
+        _pathPrefix = path;
     }
     public WebDavStorage(StorageParameter param)
     {
@@ -35,12 +35,12 @@ public class WebDavStorage : IStorage
             Credentials = new System.Net.NetworkCredential(param.userName, param.password),
             Timeout = Timeout.InfiniteTimeSpan
         });
-        _pathPrefix = param.path.TrimEnd('/') + '/';
+        _pathPrefix = param.path;
     }
 
     private string GetFullPath(string path)
     {
-        return _pathPrefix + path.TrimStart('/');
+        return _pathPrefix.TrimEnd('/') + path.TrimStart('/');
     }
 
     public async Task UploadAsync(string path, Stream content)

@@ -7,6 +7,7 @@ using OpenBMCLAPI_IN.Resources;
 using Serilog.Sinks.SystemConsole.Themes;
 using OpenBMCLAPI_IN.Core.Storage;
 using System.Net;
+using Amazon.S3;
 namespace OpenBMCLAPI_IN
 {
     public class Program
@@ -57,7 +58,7 @@ namespace OpenBMCLAPI_IN
             app.MapGet("/", () => "Hello World!");
             app.MapGet("/check_measure", async () =>
             {
-                IStorage webdav = new WebDavStorage("https://server.ind-network.top:5244/", "dav", "test", "test");
+                IStorage webdav = new S3Storage("https://699725d0af1fec3080253856d9bc6f19.r2.cloudflarestorage.com", "s3test", "", "d359e7ffc8669a38d6f2cc84f8f744f7", "751d4cc87143371375f9f83638f9d0fb16b7125566cc3062b62cda01c99693bb");
                 await webdav.CheckMeasureFilesAsync();
             });
             app.Run();

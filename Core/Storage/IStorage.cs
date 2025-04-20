@@ -47,11 +47,11 @@ public static class StorageExtensions
                 }
                 else
                 {
-                    Log.Logger.InformationL("measure_verifaction_passed", path);
+                    Log.Logger.InformationL("measure_verification_passed", path);
                 }
             }
             await Task.WhenAll(tasks);
-            Log.Logger.InformationL("created_measure");
+            Log.Logger.InformationL("created_measure"); 
             Task.Delay(Program.ConfigInstance.Instance.General.InspectMeasureInterval);
         } while (Program.ConfigInstance.Instance.General.ContinuouslyInspectMeasure);
     }

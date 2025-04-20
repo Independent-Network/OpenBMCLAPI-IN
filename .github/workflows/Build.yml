@@ -1,8 +1,10 @@
-name: Build and Package (All Platforms)
+name: Build, Package and Release
 
 on:
   push:
     branches: [main, dev]
+    tags:
+      - "v*" # 匹配版本号tag，如v1.0.0
   pull_request:
     branches: [main, dev]
   workflow_dispatch:
@@ -134,3 +136,55 @@ jobs:
           name: ${{ env.PROJECT_NAME }}_${{ steps.commit.outputs.sha_short }}_${{ matrix.rid }}_packages
           path: ./artifacts/${{ env.PROJECT_NAME }}_${{ steps.commit.outputs.sha_short }}_${{ matrix.rid }}.*
           retention-days: 7
+
+  create-release:
+    name: Create Release
+    needs: build-and-package
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get previous tag
+        id: previous-tag
+        run: |
+          # 获取当前tag
+          CURRENT_TAG=${GITHUB_REF#refs/tags/}
+          # 获取上一个tag
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 "$CURRENT_TAG"^ 2>/dev/null || echo "")
+          echo "previous_tag=$PREVIOUS_TAG" >> $GITHUB_OUTPUT
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          if [ -z "${{ steps.previous-tag.outputs.previous-tag }}" ]; then
+            # 如果没有上一个tag，获取所有commit
+            CHANGELOG=$(git log --pretty=format:"- %s (%h)")
+          else
+            # 获取两个tag之间的commit
+            CHANGELOG=$(git log --pretty=format:"- %s (%h)" "${{ steps.previous-tag.outputs.previous-tag }}".."${{ github.ref }}")
+          fi
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          name: OpenBMCLAPI-IN Release ${{ github.ref_name }}
+          body: |
+            ### Changelog
+            ${{ steps.changelog.outputs.changelog }}
+          files: |
+            artifacts/*
+          draft: false
+          prerelease: false
