@@ -1,3 +1,5 @@
+using Serilog;
+using Serilog.Localization;
 using System.Buffers;
 using System.IO;
 using System.IO.Hashing;
@@ -25,6 +27,16 @@ public class WebDavStorage : IStorage
         });
         _pathPrefix = path.TrimEnd('/') + '/';
     }
+    public WebDavStorage(StorageParameter param)
+    {
+        _client = new WebDavClient(new WebDavClientParams
+        {
+            BaseAddress = new Uri(param.baseUri),
+            Credentials = new System.Net.NetworkCredential(param.userName, param.password),
+            Timeout = Timeout.InfiniteTimeSpan
+        });
+        _pathPrefix = param.path.TrimEnd('/') + '/';
+    }
 
     private string GetFullPath(string path)
     {
@@ -47,6 +59,7 @@ public class WebDavStorage : IStorage
                 var response = await _client.PutFile(GetFullPath(path), stream);
                 if (!response.IsSuccessful)
                     throw new IOException("Upload failed with status: " + response.StatusCode);
+                Log.Logger.InformationL("upload_success",GetFullPath(path));
                 break;
             }
             catch (Exception ex) when (retryCount < MaxRetries)

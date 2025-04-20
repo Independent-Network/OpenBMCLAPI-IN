@@ -133,15 +133,6 @@ namespace OpenBMCLAPI_IN.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lost measure file, size: {0}.
-        /// </summary>
-        public static string info_lost_measure {
-            get {
-                return ResourceManager.GetString("info.lost_measure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Verification for measure file {0} passed.
         /// </summary>
         public static string info_measure_verification_passed {

@@ -141,9 +141,6 @@
   <data name="info.logger_initialized" xml:space="preserve">
     <value>日志初始化完毕</value>
   </data>
-  <data name="info.lost_measure" xml:space="preserve">
-    <value>丢失测试文件，大小: {0}</value>
-  </data>
   <data name="info.measure_verification_passed" xml:space="preserve">
     <value>测速文件{0}的验证已通过</value>
   </data>
